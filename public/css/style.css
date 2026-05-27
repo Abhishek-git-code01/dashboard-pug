@@ -84,7 +84,6 @@ body {
 }
 
 .btn {
-  margin-top: 20px;
   padding: 12px 20px;
   border: none;
   background: rgb(133, 185, 184);
@@ -93,6 +92,9 @@ body {
   border-radius: 8px;
   font-size: 16px;
   transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .btn:hover {
   background: #b8e0e5;
