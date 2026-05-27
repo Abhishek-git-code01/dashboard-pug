@@ -11,35 +11,10 @@ html
 
   body
 
-    nav.navbar
+   
 
-      .logo
-        img(
-            src="/logo.jpeg"
-            alt="logo"
-        )
-      .right-nav
-        ul.nav-links
-
-            li
-             a(href="/") Home
-
-            li
-             a(href="/about") About
-
-            li
-             a(href="/services") Services
-
-            li
-             a(href="/contact") Contact
-
-        button.btn Login
-        
-      .hamburger(onclick="toggleMenu()") 
-         span 
-         span 
-         span
-
+       
+    include partials/navbar    
     section.hero
 
       .hero-left

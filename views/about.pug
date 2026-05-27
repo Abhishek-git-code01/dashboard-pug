@@ -11,26 +11,100 @@ html
 
   body
 
-    nav.navbar
-      a(href="/") Home
-      a(href="/about") About
+    //- nav.navbar
+    //-   a(href="/") Home
+    //-   a(href="/about") About
 
-    section.about
+    //- section.about
 
-      h1 About Us
+      //- h1 About Us
 
-      p
-        | Welcome to #{company}
+      //- p
+      //-   | Welcome to #{company}
 
-      h2 Founder
+      //- h2 Founder
 
-      p
-        | Founder name is #{founder}
+      //- p
+      //-   | Founder name is #{founder}
 
-      .card
-        h3 Our Mission
+      //- .card
+      //-   h3 Our Mission
 
-        p
-          | We help developers learn modern web development.
+      //-   p
+      //-     | We help developers learn modern web development.
 
-      button.btn Learn More
+      //- button.btn Learn More
+    include partials/navbar
+    // Carousel Section
+    section.carousel-section
+
+      h1.carousel-title Bayone Team Showcase
+
+      .carousel-container
+
+        button.arrow.left &#10094;
+
+        .carousel
+
+          .slide.active
+            img(
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+              alt="slide1"
+            )
+
+            .slide-content
+              h2 Bayone Innovation
+              p
+                | Building scalable and modern web solutions for developers worldwide.
+
+          .slide
+            img(
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+              alt="slide2"
+            )
+
+            .slide-content
+              h2 Creative Development
+              p
+                | Bayone focuses on modern UI/UX and high performance applications.
+
+          .slide
+            img(
+              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d"
+              alt="slide3"
+            )
+
+            .slide-content
+              h2 Future Technology
+              p
+                | Empowering developers with cutting-edge technologies and learning.
+
+        button.arrow.right &#10095;
+
+    script.
+      const slides = document.querySelectorAll('.slide');
+      const nextBtn = document.querySelector('.right');
+      const prevBtn = document.querySelector('.left');
+
+      let current = 0;
+
+      function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+      }
+
+      nextBtn.addEventListener('click', () => {
+        current++;
+        if (current >= slides.length) {
+          current = 0;
+        }
+        showSlide(current);
+      });
+
+      prevBtn.addEventListener('click', () => {
+        current--;
+        if (current < 0) {
+          current = slides.length - 1;
+        }
+        showSlide(current);
+      });

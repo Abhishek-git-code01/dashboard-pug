@@ -1,0 +1,41 @@
+nav.navbar
+
+  .logo
+    img(
+      src="/logo.jpeg"
+      alt="logo"
+    )
+
+  .right-nav
+    ul.nav-links
+
+      li
+        a(
+          href="/"
+          class=page === "home" ? "active" : ""
+        ) Home
+
+      li
+        a(
+          href="/about"
+          class=page === "about" ? "active" : ""
+        ) About
+
+      li
+        a(
+          href="/services"
+          class=page === "services" ? "active" : ""
+        ) Services
+
+      li
+        a(
+          href="/contact"
+          class=page === "contact" ? "active" : ""
+        ) Contact
+
+    button.btn Login
+
+  .hamburger(onclick="toggleMenu()")
+    span
+    span
+    span

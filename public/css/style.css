@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: sans-serif;
-  background: #111;
+  background-color: #d9f3f6;
   color: white;
   overflow-x: hidden;
 }
@@ -67,6 +67,7 @@ body {
 }
 .about {
   padding: 40px;
+  background-color: rgb(133, 185, 184);
 }
 .about h1 {
   font-size: 40px;
@@ -89,11 +90,17 @@ body {
   background: rgb(133, 185, 184);
   color: white;
   cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #b8e0e5;
 }
 
 .logo img {
-  width: 120px;
-  height: auto;
+  height: 50px;
+  width: auto;
   object-fit: contain;
   display: block;
 }
@@ -380,6 +387,121 @@ body {
     left: -10px;
     bottom: -10px;
   }
+}
+/* Navbar */
+/* About Section */
+.about {
+  padding: 50px;
+  background-color: rgb(133, 185, 184);
+}
+.about h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #111827;
+}
+.about h2 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+.about p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+.card h3 {
+  margin-bottom: 10px;
+}
+
+/* Carousel Section */
+.carousel-section {
+  padding: 60px 40px;
+}
+
+.carousel-title {
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 40px;
+  color: #111827;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+}
+
+.slide {
+  display: none;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+.slide-content h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.slide-content p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Arrow Buttons */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 15px 18px;
+  cursor: pointer;
+  font-size: 28px;
+  border-radius: 50%;
+  z-index: 10;
+  transition: 0.3s;
+}
+.arrow:hover {
+  background: #2563eb;
+}
+
+.left {
+  left: 15px;
+}
+
+.right {
+  right: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
