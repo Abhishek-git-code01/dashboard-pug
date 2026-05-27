@@ -1,37 +1,23 @@
 nav.navbar
+  -
+    const navItems = [
+      { name: "Home", href: "/", key: "home" },
+      { name: "About", href: "/about", key: "about" },
+      { name: "Services", href: "/services", key: "services" },
+      { name: "Contact", href: "/contact", key: "contact" }
+    ]
 
   .logo
-    img(
-      src="/logo.jpeg"
-      alt="logo"
-    )
+    img(src="/logo.jpeg", alt="logo")
 
   .right-nav
     ul.nav-links
-
-      li
-        a(
-          href="/"
-          class=page === "home" ? "active" : ""
-        ) Home
-
-      li
-        a(
-          href="/about"
-          class=page === "about" ? "active" : ""
-        ) About
-
-      li
-        a(
-          href="/services"
-          class=page === "services" ? "active" : ""
-        ) Services
-
-      li
-        a(
-          href="/contact"
-          class=page === "contact" ? "active" : ""
-        ) Contact
+      each item in navItems
+        li
+          a(
+            href=item.href
+            class=(page === item.key ? "active" : "")
+          )= item.name
 
     button.btn Login
 

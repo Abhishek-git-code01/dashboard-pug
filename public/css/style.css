@@ -109,7 +109,7 @@ body {
 
 .main {
   padding: 30px;
-  background: red;
+  background: #0d7c8b;
   color: azure;
 }
 
@@ -125,9 +125,28 @@ body {
   font-size: 18px;
   font-weight: 600;
   transition: 0.3s;
+  position: relative;
+  padding-bottom: 6px;
+  /* underline */
 }
 .nav-links a:hover {
-  color: crimson;
+  color: #0d7c8b;
+}
+.nav-links a.active {
+  color: #0d7c8b;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: #0d7c8b;
+  transition: width 0.3s ease;
+}
+.nav-links a.active::after {
+  width: 100%;
 }
 
 .hero {
@@ -137,6 +156,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 80px;
   padding: 80px 100px;
   box-sizing: border-box;
   overflow: visible;
@@ -224,7 +244,6 @@ body {
   width: fit-content;
 }
 
-/* MAIN IMAGE */
 .image-wrapper img {
   width: 450px;
   height: 550px;
@@ -390,8 +409,6 @@ body {
     bottom: -10px;
   }
 }
-/* Navbar */
-/* About Section */
 .about {
   padding: 50px;
   background-color: rgb(133, 185, 184);
@@ -422,7 +439,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* Carousel Section */
 .carousel-section {
   padding: 60px 40px;
 }
@@ -495,7 +511,7 @@ body {
   transition: 0.3s;
 }
 .arrow:hover {
-  background: #2563eb;
+  background: #d9f3f6;
 }
 
 .left {
@@ -504,6 +520,92 @@ body {
 
 .right {
   right: 15px;
+}
+
+.accordion-section {
+  padding: 60px 40px;
+  background: #d9f3f6;
+}
+
+.accordion-section h1 {
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 40px;
+  color: #111;
+}
+
+.accordion {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ITEM */
+.accordion-item {
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+/* HEADER */
+.accordion-header {
+  padding: 18px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  background: #ffffff;
+  color: #111;
+  transition: 0.3s;
+}
+.accordion-header:hover {
+  background: #e8f7f9;
+}
+.accordion-header span {
+  font-size: 22px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* BODY (collapsed by default) */
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 20px;
+  background: #f9fdfd;
+}
+.accordion-body p {
+  margin: 0;
+  padding: 15px 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* ACTIVE STATE */
+.accordion-item.active {
+  border-left: 4px solid #006d77;
+}
+
+/* When active, open body */
+.accordion-item.active .accordion-body {
+  padding: 0 20px 15px;
+}
+
+/* Rotate + icon */
+.accordion-item.active .accordion-header span {
+  transform: rotate(45deg);
+  color: #006d77;
+}
+
+/* Smooth hover lift */
+.accordion-item:hover {
+  transform: translateY(-2px);
 }
 
 /*# sourceMappingURL=style.css.map */
