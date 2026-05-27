@@ -1,0 +1,36 @@
+doctype html
+
+html
+  head
+    title= title
+
+    link(
+      rel="stylesheet"
+      href="/css/style.css"
+    )
+
+  body
+
+    nav.navbar
+      a(href="/") Home
+      a(href="/about") About
+
+    section.about
+
+      h1 About Us
+
+      p
+        | Welcome to #{company}
+
+      h2 Founder
+
+      p
+        | Founder name is #{founder}
+
+      .card
+        h3 Our Mission
+
+        p
+          | We help developers learn modern web development.
+
+      button.btn Learn More

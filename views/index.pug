@@ -1,0 +1,90 @@
+doctype html
+
+html
+  head
+    title= name
+
+    link(
+      rel="stylesheet"
+      href="/css/style.css"
+    )
+
+  body
+
+    nav.navbar
+
+      .logo
+        img(
+            src="/logo.jpeg"
+            alt="logo"
+        )
+      .right-nav
+        ul.nav-links
+
+            li
+             a(href="/") Home
+
+            li
+             a(href="/about") About
+
+            li
+             a(href="/services") Services
+
+            li
+             a(href="/contact") Contact
+
+        button.btn Login
+        
+      .hamburger(onclick="toggleMenu()") 
+         span 
+         span 
+         span
+
+    section.hero
+
+      .hero-left
+
+        span.badge
+          | Digital Marketing Agency
+
+        h1
+          | Advanced analytics to
+          br
+          | grow your business
+
+        p
+          | Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+          | Velit officia consequat duis enim velit mollit.
+
+        .hero-buttons
+
+          button.primary-btn
+            | Get started
+
+          button.secondary-btn
+            | How it works
+
+      .hero-right
+
+        .image-wrapper
+
+          img(
+            src="/team.png"
+            alt="team"
+          )
+
+          .small-card
+            .wave
+
+    //- p this is paragraph your name is #{user.name}
+
+    //- h1 Our heading name is #{name}
+
+    //- div.main(height="500", width="100%")
+    //-   | this is div tag
+    script.
+      function toggleMenu() {
+        document
+            .querySelector(".right-nav")
+            .classList.toggle("active");
+      }
