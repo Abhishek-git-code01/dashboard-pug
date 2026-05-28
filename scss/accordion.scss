@@ -1,0 +1,99 @@
+.accordion-section {
+  padding: 60px 40px;
+  background: #d9f3f6;
+}
+
+.accordion-section h1 {
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 40px;
+  color: #111;
+}
+
+.accordion {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ITEM */
+
+.accordion-item {
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+/* HEADER */
+
+.accordion-header {
+  padding: 18px 20px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  background: #ffffff;
+  color: #111;
+
+  transition: 0.3s;
+
+  &:hover {
+    background: #e8f7f9;
+  }
+
+  span {
+    font-size: 22px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+}
+
+/* BODY */
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 20px;
+  background: #f9fdfd;
+
+  p {
+    margin: 0;
+    padding: 15px 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #444;
+  }
+}
+
+/* ACTIVE STATE */
+
+.accordion-item.active {
+  border-left: 4px solid #006d77;
+}
+
+/* OPEN BODY */
+
+.accordion-item.active .accordion-body {
+  padding: 0 20px 15px;
+}
+
+/* ROTATE ICON */
+
+.accordion-item.active .accordion-header span {
+  transform: rotate(45deg);
+  color: #006d77;
+}
+
+/* HOVER EFFECT */
+
+.accordion-item:hover {
+  transform: translateY(-2px);
+}

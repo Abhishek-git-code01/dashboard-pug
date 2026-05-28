@@ -1,0 +1,206 @@
+.hero {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #d9f3f6;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+
+  padding: 80px 100px;
+
+  box-sizing: border-box;
+
+  overflow: visible;
+}
+
+/* BADGE */
+
+.badge {
+  display: inline-block;
+
+  background: #006d77;
+  color: white;
+
+  padding: 12px 20px;
+
+  border-radius: 30px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-bottom: 35px;
+}
+
+/* HEADING */
+
+.hero-left h1 {
+  font-size: 72px;
+  line-height: 1.1;
+
+  color: #111;
+
+  margin-bottom: 35px;
+
+  max-width: 650px;
+}
+
+/* PARAGRAPH */
+
+.hero-left p {
+  font-size: 20px;
+  line-height: 1.8;
+
+  color: #5f6b6d;
+
+  max-width: 700px;
+
+  margin-bottom: 45px;
+}
+
+/* BUTTONS */
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/* PRIMARY BUTTON */
+
+.primary-btn {
+  padding: 18px 36px;
+
+  background: black;
+  color: white;
+
+  border: none;
+
+  border-radius: 10px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* SECONDARY BUTTON */
+
+.secondary-btn {
+  padding: 18px 36px;
+
+  background: transparent;
+
+  border: 1px solid #333;
+
+  border-radius: 10px;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.secondary-btn:hover {
+  background: white;
+}
+
+/* RIGHT SIDE */
+
+.hero-right {
+  width: 45%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* IMAGE WRAPPER */
+
+.image-wrapper {
+  position: relative;
+
+  width: fit-content;
+}
+
+.image-wrapper img {
+  width: 450px;
+  height: 550px;
+
+  object-fit: cover;
+
+  border-radius: 40px;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* BORDER SHAPE */
+
+.image-wrapper::before {
+  content: "";
+
+  width: 450px;
+  height: 550px;
+
+  border: 3px solid #0d7c8b;
+
+  border-radius: 40px;
+
+  position: absolute;
+
+  left: 30px;
+  top: 30px;
+
+  z-index: 1;
+}
+
+/* SMALL CARD */
+
+.small-card {
+  width: 180px;
+  height: 180px;
+
+  background: white;
+
+  border-radius: 20px;
+
+  position: absolute;
+
+  left: -40px;
+  bottom: 30px;
+
+  z-index: 3;
+
+  overflow: hidden;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* WAVE */
+
+.wave {
+  width: 100%;
+  height: 100%;
+
+  background: #006d77;
+
+  clip-path: polygon(
+    0% 60%,
+    20% 40%,
+    40% 70%,
+    60% 30%,
+    80% 60%,
+    100% 20%,
+    100% 100%,
+    0% 100%
+  );
+}

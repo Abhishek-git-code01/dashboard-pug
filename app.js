@@ -2,17 +2,10 @@ const express = require("express");
 
 const app = express();
 
-
-
 app.set("view engine", "pug");
-app.set("views", "./views");
-
+app.set("views", "./views/pages/");
 
 app.use(express.static("public"));
-
-
-
-
 
 app.get("/", (req, res) => {
   res.render("index",{
@@ -24,7 +17,6 @@ app.get("/", (req, res) => {
   });
 });
 
-
 app.get("/about", (req,res)=>{
     res.render("about",{
         title: "About Page",
@@ -34,9 +26,6 @@ app.get("/about", (req,res)=>{
     page:"about"
     });
 })
-
-
-
 
 app.listen(3000, () => {
   console.log("Server running");

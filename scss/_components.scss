@@ -1,0 +1,30 @@
+.btn {
+  padding: 12px 20px;
+  border: none;
+  background: rgb(133, 185, 184);
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.3s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: #b8e0e5;
+  }
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
+  h3 {
+    margin-bottom: 10px;
+  }
+}

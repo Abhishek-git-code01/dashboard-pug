@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
   "start": "node app.js",
-  "sass": "sass --watch public/scss/style.scss:public/css/style.css",
+  "sass": "sass --watch scss/style.scss:public/css/style.css",
   "dev": "concurrently \"npm run start\" \"npm run sass\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

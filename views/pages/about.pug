@@ -9,13 +9,8 @@ html
     )
 
   body
-
     
-    include partials/navbar
-
-    
-
-
+    include ../partials/navbar
 
     section.carousel-section
 
@@ -29,7 +24,7 @@ html
 
           .slide.active
             img(
-              src="c1.jpg"
+              src="images/c1.jpg"
               alt="slide1"
             )
             .slide-content
@@ -38,7 +33,7 @@ html
 
           .slide
             img(
-              src="c2.jpg"
+              src="images/c2.jpg"
               alt="slide2"
             )
             .slide-content
@@ -47,7 +42,7 @@ html
 
           .slide
             img(
-              src="c3.jpg"
+              src="images/c3.jpg"
               alt="slide3"
             )
             .slide-content
@@ -55,8 +50,6 @@ html
               p Empowering developers with cutting-edge technologies and learning.
 
         button.arrow.right &#10095;
-
-    
 
 
 
@@ -83,9 +76,6 @@ html
         if (current < 0) current = slides.length - 1;
         showSlide(current);
       });
-
-    
-
 
 
     section.accordion-section
@@ -131,8 +121,6 @@ html
               | At BayOne, we’re more than a technology and talent partner—we’re a trusted ally in driving innovation and success.
 
     
-
-
     script.
       function toggleAccordion(el) {
         const item = el.parentElement;
