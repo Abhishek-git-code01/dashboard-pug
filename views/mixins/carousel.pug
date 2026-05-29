@@ -11,7 +11,7 @@ mixin carousel(id, title, slides, options = {})
       data-interval=options.interval
       data-indicators=options.indicators ? 'true' : 'false'
       data-variant=options.variant
-      data-hover-arrows=options.showArrowsOnHover ? 'true' : 'false'
+      data-hover-arrows=options.hoverArrows ? 'true' : 'false'
     )
 
       if options.arrows || options.hoverArrows

@@ -8,16 +8,16 @@ class Carousel {
     this.current = 0;
     this.autoScroll = container.getAttribute('data-autoscroll') === 'true';
     this.showIndicators = container.getAttribute('data-indicators') === 'true';
-    this.showArrowsOnHover =container.dataset.hoverArrows === 'true';
+    this.hoverArrows =container.dataset.hoverArrows === 'true';
     this.interval = parseInt(container.dataset.interval) || 3000;
     this.variant = container.dataset.variant;
     this.init();
   }
 
   init() {
-    if (this.showArrowsOnHover) {
-    this.container.classList.add('hover-arrows');
-    }
+    if (this.hoverArrows) {
+  this.container.classList.add('hover-arrows');
+}
     this.showSlide(this.current);
 
     if (this.nextBtn) {
@@ -38,7 +38,7 @@ class Carousel {
     }
 
     this.addHoverPause();
-    this.addSwipeSupport();  // ← new: touch/drag to swipe
+    this.addSwipeSupport();  
   }
 
   showSlide(index) {
@@ -77,7 +77,7 @@ class Carousel {
     });
   }
 
-  // ── dot indicators (carousels 1 & 2) ─────────────────────────────────────
+  
   createIndicators() {
     this.indicatorsContainer.innerHTML = '';
     this.slides.forEach((_, index) => {
@@ -98,44 +98,7 @@ class Carousel {
     });
   }
 
-  // ── progress-bar indicators (carousel 3) ─────────────────────────────────
-  createProgressBars() {
-    this.indicatorsContainer.innerHTML = '';
-    this.slides.forEach((_, index) => {
-      const bar = document.createElement('div');
-      bar.classList.add('progress-bar');
 
-      const fill = document.createElement('div');
-      fill.classList.add('progress-fill');
-      bar.appendChild(fill);
-
-      bar.addEventListener('click', () => {
-        this.current = index;
-        this.showSlide(index);
-      });
-
-      this.indicatorsContainer.appendChild(bar);
-    });
-    this.updateProgressBars(0);
-  }
-
-  updateProgressBars(index) {
-    this.indicatorsContainer.querySelectorAll('.progress-bar').forEach((bar, i) => {
-      const fill = bar.querySelector('.progress-fill');
-      fill.style.transition = 'none';
-      fill.style.width = i < index ? '100%' : '0%';
-
-      if (i === index) {
-        // slight delay so the transition resets before re-animating
-        requestAnimationFrame(() => {
-          fill.style.transition = `width ${this.interval}ms linear`;
-          fill.style.width = '100%';
-        });
-      }
-    });
-  }
-
-  // ── swipe / drag support (carousel 3 and any carousel) ───────────────────
   addSwipeSupport() {
     let startX = 0;
     this.container.addEventListener('touchstart', e => {

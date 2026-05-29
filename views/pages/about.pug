@@ -12,8 +12,6 @@ html
 
     include ../partials/navbar
     include ../mixins/carousel
-    //- section.hero
-    //- h1 About Page
     +carousel(
       'serviceCarousel',
       'Our Services',
@@ -36,66 +34,34 @@ html
       ],
       {
         autoScroll: false,
-        indicators: false
+        indicators: true,
+        arrows: true,
+        hoverArrows: false,
+        interval: 1500
       }
     )
 
     script(src="/js/carousel.js")
 
+    include ../mixins/accordion
 
-    section.accordion-section
-
-      h1 About Us
-
-      .accordion
-
-        .accordion-item
-          .accordion-header(onclick="toggleAccordion(this)")
-            | Who we are
-            span +
-
-          .accordion-body
-            p
-              | BayOne is a minority-owned Technology and Talent Solutions Partner with a global footprint, headquartered in the San Francisco Bay Area.
-
-        .accordion-item
-          .accordion-header(onclick="toggleAccordion(this)")
-            | What we do
-            span +
-
-          .accordion-body
-            p
-              | We excel at bridging talent and technology gaps, building strong teams in Cloud Computing, IT Infrastructure, Software Engineering, User Experience Design, and more.
-
-        .accordion-item
-          .accordion-header(onclick="toggleAccordion(this)")
-            | Our Mission
-            span +
-
-          .accordion-body
-            p
-              | Our commitment to customer success is matched by our passion for championing diversity in tech. We believe in sustainable practices and are dedicated to making a positive impact in communities.
-
-        .accordion-item
-          .accordion-header(onclick="toggleAccordion(this)")
-            | Why BayOne
-            span +
-
-          .accordion-body
-            p
-              | At BayOne, we’re more than a technology and talent partner—we’re a trusted ally in driving innovation and success.
-
-    
-    script.
-      function toggleAccordion(el) {
-        const item = el.parentElement;
-        item.classList.toggle("active");
-
-        const body = item.querySelector(".accordion-body");
-
-        if (item.classList.contains("active")) {
-          body.style.maxHeight = body.scrollHeight + "px";
-        } else {
-          body.style.maxHeight = null;
-        }
+    +accordion("About Us", [
+      {
+          title: "Who we are",
+          content: "BayOne is a minority-owned Technology and Talent Solutions Partner with a global footprint, headquartered in the San Francisco Bay Area."
+      },
+      {
+         title: "What we do",
+         content: "We excel at bridging talent and technology gaps, building strong teams in Cloud Computing, IT Infrastructure, Software Engineering, User Experience Design, and more."
+      },
+      {
+         title: "Our Mission",
+         content: "Our commitment to customer success is matched by our passion for championing diversity in tech. We believe in sustainable practices and are dedicated to making a positive impact in communities."
+      },
+      {
+        title: "Why BayOne",
+        content: "At BayOne, we’re more than a technology and talent partner—we’re a trusted ally in driving innovation and success."
       }
+    ])
+
+    script(src="/js/accordion.js")

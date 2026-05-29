@@ -1,0 +1,17 @@
+mixin accordion(title, items)
+
+  section.accordion-section
+
+    h1= title
+
+    .accordion
+
+      each item, index in items
+        .accordion-item
+
+          .accordion-header(onclick="toggleAccordion(this)")
+            | #{item.title}
+            span +
+
+          .accordion-body
+            p= item.content

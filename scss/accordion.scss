@@ -97,3 +97,11 @@
 .accordion-item:hover {
   transform: translateY(-2px);
 }
+
+
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
