@@ -1,0 +1,110 @@
+doctype html
+html
+head
+title Services
+
+
+link(
+  rel="stylesheet"
+  href="/css/style.css"
+)
+
+body
+
+
+include ../partials/navbar
+include ../mixins/carousel
+
++carousel(
+  'heroCarousel',
+  'Featured Services',
+  [
+    {
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200',
+      heading: 'Cloud Services',
+      text: 'AWS and Azure cloud infrastructure solutions.'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200',
+      heading: 'Cyber Security',
+      text: 'Enterprise-grade security and monitoring.'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200',
+      heading: 'DevOps',
+      text: 'CI/CD automation and scalable deployment.'
+    }
+  ],
+  {
+    autoScroll: true,
+    indicators: true,
+    arrows: false,
+    showArrowsOnHover: true,
+    interval: 1500
+  }
+)
+
+
+
++carousel(
+  'webCarousel',
+  'Web Development',
+  [
+    {
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200',
+      heading: 'Frontend Development',
+      text: 'React, Vue and responsive UI applications.'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200',
+      heading: 'Backend APIs',
+      text: 'Scalable Node.js and Express backends.'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200',
+      heading: 'Database Design',
+      text: 'MongoDB and SQL database architecture.'
+    }
+  ],
+  {
+    autoScroll: true,
+    indicators: true,
+    arrows: true,
+    showArrowsOnHover: true,
+    interval: 1000
+  }
+)
+
+
+
++carousel(
+  'designCarousel',
+  'UI UX Design',
+  [
+    {
+      image: 'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1200',
+      heading: 'UI Design',
+      text: 'Modern clean and responsive interfaces.'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200',
+      heading: 'UX Research',
+      text: 'User-focused product experience design.'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200',
+      heading: 'Mobile Design',
+      text: 'Beautiful Android and iOS app interfaces.'
+    }
+  ],
+  {
+    autoScroll: false,
+    indicators: false,
+    arrows: true,
+    showArrowsOnHover: true,
+    interval: 1500
+  }
+)
+
+script(src="/js/carousel.js")
+

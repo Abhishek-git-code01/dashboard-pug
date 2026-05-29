@@ -1,3 +1,102 @@
+// .carousel-section {
+//   padding: 60px 40px;
+// }
+
+// .carousel-title {
+//   text-align: center;
+//   font-size: 38px;
+//   margin-bottom: 40px;
+//   color: #111827;
+// }
+
+// .carousel-container {
+//   position: relative;
+//   max-width: 900px;
+//   margin: auto;
+//   overflow: hidden;
+// }
+
+// .carousel {
+//   position: relative;
+// }
+
+// .slide {
+//   display: none;
+//   position: relative;
+//   border-radius: 15px;
+//   overflow: hidden;
+
+//   img {
+//     width: 100%;
+//     height: 500px;
+//     object-fit: cover;
+//     display: block;
+//   }
+// }
+
+// .slide.active {
+//   display: block;
+// }
+
+// .slide-content {
+//   position: absolute;
+//   bottom: 0;
+//   width: 100%;
+//   padding: 30px;
+//   background: rgba(0,0,0,0.6);
+//   color: white;
+
+//   h2 {
+//     font-size: 32px;
+//     margin-bottom: 10px;
+//   }
+
+//   p {
+//     font-size: 18px;
+//     line-height: 1.6;
+//   }
+// }
+
+// /* Arrow Buttons */
+
+// .arrow {
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   background: rgba(0,0,0,0.6);
+//   color: white;
+//   border: none;
+//   padding: 15px 18px;
+//   cursor: pointer;
+//   font-size: 28px;
+//   border-radius: 50%;
+//   z-index: 10;
+//   transition: 0.3s;
+
+//   &:hover {
+//     background: #d9f3f6;
+//   }
+// }
+
+// .left {
+//   left: 15px;
+// }
+
+// .right {
+//   right: 15px;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
 .carousel-section {
   padding: 60px 40px;
 }
@@ -13,29 +112,33 @@
   position: relative;
   max-width: 900px;
   margin: auto;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .carousel {
   position: relative;
+  min-height: 500px;
+  overflow: hidden;      /* ← move overflow here, only clips slides */
+  border-radius: 15px;
 }
 
 .slide {
   display: none;
   position: relative;
-  border-radius: 15px;
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    display: block;
-  }
+  // border-radius: 15px;
+  // overflow: hidden;
 }
 
 .slide.active {
   display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  background: #ccc
 }
 
 .slide-content {
@@ -45,19 +148,17 @@
   padding: 30px;
   background: rgba(0,0,0,0.6);
   color: white;
-
-  h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-  }
-
-  p {
-    font-size: 18px;
-    line-height: 1.6;
-  }
 }
 
-/* Arrow Buttons */
+.slide-content h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.slide-content p {
+  font-size: 18px;
+  line-height: 1.6;
+}
 
 .arrow {
   position: absolute;
@@ -71,11 +172,6 @@
   font-size: 28px;
   border-radius: 50%;
   z-index: 10;
-  transition: 0.3s;
-
-  &:hover {
-    background: #d9f3f6;
-  }
 }
 
 .left {
@@ -84,4 +180,69 @@
 
 .right {
   right: 15px;
+}
+
+.indicators {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #111827;
+}
+
+
+
+
+// Progress-bar indicators (carousel 3)
+.indicators:has(.progress-bar) {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0 4px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 2px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #fff;
+  border-radius: 2px;
+}
+
+
+.hover-arrows {
+
+  .arrow {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+
+    .arrow {
+      opacity: 1;
+      visibility: visible;
+    }
+
+  }
 }

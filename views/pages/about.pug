@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title= title
+    title title 
 
     link(
       rel="stylesheet"
@@ -9,73 +9,38 @@ html
     )
 
   body
-    
+
     include ../partials/navbar
-
-    section.carousel-section
-
-      h1.carousel-title Bayone Team Showcase
-
-      .carousel-container
-
-        button.arrow.left &#10094;
-
-        .carousel
-
-          .slide.active
-            img(
-              src="images/c1.jpg"
-              alt="slide1"
-            )
-            .slide-content
-              h2 Bayone Innovation
-              p Building scalable and modern web solutions for developers worldwide.
-
-          .slide
-            img(
-              src="images/c2.jpg"
-              alt="slide2"
-            )
-            .slide-content
-              h2 Creative Development
-              p BayOne focuses on modern UI/UX and high performance applications.
-
-          .slide
-            img(
-              src="images/c3.jpg"
-              alt="slide3"
-            )
-            .slide-content
-              h2 Future Technology
-              p Empowering developers with cutting-edge technologies and learning.
-
-        button.arrow.right &#10095;
-
-
-
-    script.
-      const slides = document.querySelectorAll('.slide');
-      const nextBtn = document.querySelector('.right');
-      const prevBtn = document.querySelector('.left');
-
-      let current = 0;
-
-      function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        slides[index].classList.add('active');
+    include ../mixins/carousel
+    //- section.hero
+    //- h1 About Page
+    +carousel(
+      'serviceCarousel',
+      'Our Services',
+      [
+        {
+          image: 'images/c1.jpg',
+          heading: 'Cloud Services',
+          text: 'AWS and Azure solutions.'
+        },
+        {
+          image: 'images/c2.jpg',
+          heading: 'Web Development',
+          text: 'Full stack scalable apps.'
+        },
+        {
+          image: 'images/c3.jpg',
+          heading: 'UI UX Design',
+          text: 'Modern responsive design.'
+        }
+      ],
+      {
+        autoScroll: false,
+        indicators: false
       }
+    )
 
-      nextBtn.addEventListener('click', () => {
-        current++;
-        if (current >= slides.length) current = 0;
-        showSlide(current);
-      });
-
-      prevBtn.addEventListener('click', () => {
-        current--;
-        if (current < 0) current = slides.length - 1;
-        showSlide(current);
-      });
+    script(src="/js/carousel.js")
 
 
     section.accordion-section

@@ -22,10 +22,28 @@ app.get("/about", (req,res)=>{
         title: "About Page",
     company: "MentorsHelp",
     founder: "Krishna Patel",
-    // title: "About",
     page:"about"
     });
 })
+
+
+
+app.get("/services", (req,res)=>{
+    res.render("services",{
+        title: "Services Page",
+    page:"services"
+    });
+})
+
+
+app.get("/contact", (req,res)=>{
+    res.render("contact",{
+        title: "Contact Page",
+    page:"contact"
+    });
+})
+
+
 
 app.listen(3000, () => {
   console.log("Server running");
