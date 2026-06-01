@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Searchable Cards
+
+    link(rel="stylesheet" href="/css/style.css")
+
+  body
+    include ../partials/navbar
+    include ../mixins/card
+
+    .container
+
+      h1 Search Cards
+
+      .search-wrapper
+        input#searchInput(
+          type="text"
+          placeholder="Search..."
+        )
+
+      .cards#cardsContainer
+        if cards
+         each item in cards
+            +card(item)
+        else
+         p No cards available
+
+    script(src="/js/search.js")

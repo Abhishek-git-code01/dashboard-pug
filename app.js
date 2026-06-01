@@ -18,6 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req,res)=>{
+  // console.log("cards =", cards);
     res.render("about",{
         title: "About Page",
     company: "MentorsHelp",
@@ -36,12 +37,44 @@ app.get("/services", (req,res)=>{
 })
 
 
-app.get("/contact", (req,res)=>{
-    res.render("contact",{
-        title: "Contact Page",
-    page:"contact"
-    });
-})
+app.get('/contact', (req, res) => {
+  const cards = [
+  {
+    title: 'Digital Transformation',
+    description: 'Accelerate business growth with modern digital strategies, cloud adoption, and customer-centric solutions.'
+  },
+  {
+    title: 'Talent Solutions',
+    description: 'Connect with highly skilled technology professionals to strengthen your teams and deliver projects faster.'
+  },
+  {
+    title: 'Cloud Services',
+    description: 'Design, migrate, and optimize cloud infrastructure for improved scalability, security, and performance.'
+  },
+  {
+    title: 'Data & Analytics',
+    description: 'Transform raw data into actionable insights through advanced analytics, reporting, and business intelligence.'
+  },
+  {
+    title: 'AI & Automation',
+    description: 'Leverage artificial intelligence and automation to streamline operations and enhance customer experiences.'
+  },
+  {
+    title: 'Product Engineering',
+    description: 'Build innovative digital products with agile development, modern architectures, and user-focused design.'
+  }
+];
+
+
+  res.render('contact', {
+      title: "Contact Page",
+    page:"contact",
+    cards
+  });
+});
+
+
+
 
 
 
